@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<title>View Roster</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+}
+    
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-color:black;
+    min-height: 75%;
+}
+    
+.menu {
+    display: none;
+}
+</style>
+
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+        <a href="/admin" class="w3-button w3-block w3-black">HOME</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/viewRoster" class="w3-button w3-block w3-black">CLASSES</a>
+      </div>
+      <div class="w3-col s3">
+        <a class="w3-button w3-block w3-black">COMPETITIONS</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/" class="w3-button w3-block w3-black">LOGOUT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add a background color and large text to the whole page -->
+  <div class="w3-sand w3-grayscale w3-large">
+    
+<!-- View Roster  -->
+<div class="w3-container" id="menu">
+    <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide"></span></h5>
+        <div class="w3-row w3-center w3-card w3-padding">
+          <h5 class="w3-row w3-left w3-padding-4"><span class="w3-tag w3-wide">MY CLASSES</span></h5><br><br>
+          <style type="text/css">
+            table, th, td{
+                border: 1px solid black;
+            }
+            </style>
+        
+            <table class=w3-table>
+                <th>Athlete ID</th>
+                <th>Day</th>
+                <th>Time</th>
+                {% for line in athletes %} 
+                    <tr>
+                    <td>{{line.athlete}}</td>
+                    <td>{{line.day}}</td>
+                    <td>{{line.time}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+    
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+</HTML>
+    
